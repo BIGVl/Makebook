@@ -19,6 +19,7 @@
     padding: 1rem;
     width: 30vw;
     height: 45vh;
+    margin-top: -10%;
 }
 
 
@@ -29,6 +30,45 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 1rem;
+    font-family: inherit;
+}
+
+.create-div > form > legend {
+
+    font-size: 1.7rem;
+    align-self: flex-start;
+    font-family: inherit;
+    color: var(--action);
+    margin-left: 10%;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}
+
+form > .name {
+    display: flex;
+    gap: .7rem;
+}
+
+.name > input {
+
+    width: 70%;
+    height: 1.8rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    border-radius:10px ;
+    border: none;
+}
+
+input {
+    height: 1.8rem;
+        font-size: 1rem;
+        padding-left: 1rem;
+        border-radius: 10px;
+        border: none;
+}
+
+input:focus {
+    outline: 1px solid var(--action);
 }
 

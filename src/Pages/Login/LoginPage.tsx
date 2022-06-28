@@ -34,7 +34,7 @@ const LoginPage = () => {
 
   return (
     <div className="login">
-      {create === false ? null : <CreateAccModal setCreate={setCreate} />}
+      {create === false ? null : <CreateAccModal create={create} setCreate={setCreate} />}
       <div className="left-login">
         <div id="makebook">Makebook</div>
         <p>Get as productive as possible while having fun with friends and associates.</p>
@@ -52,7 +52,7 @@ const LoginPage = () => {
             setCreate(true);
           }}
         >
-          Create new account
+          Create a new account
         </button>
       </form>
       {errorMessage === '' ? null : <div className="error"> {errorMessage} </div>}
