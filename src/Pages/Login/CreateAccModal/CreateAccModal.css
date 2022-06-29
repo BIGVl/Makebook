@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
 }
 
 
@@ -18,7 +19,7 @@
     box-shadow: 2px 2px 10px 2px hsl(280, 50%, 70%);
     padding: 1rem;
     width: 30vw;
-    height: 45vh;
+    height: 54vh;
     margin-top: -10%;
 }
 
@@ -53,7 +54,7 @@ form > .name {
 .name > input {
 
     width: 70%;
-    height: 1.8rem;
+    height: 2rem;
     font-size: 1rem;
     padding-left: 1rem;
     border-radius:10px ;
@@ -61,7 +62,7 @@ form > .name {
 }
 
 input {
-    height: 1.8rem;
+        height: 2rem;
         font-size: 1rem;
         padding-left: 1rem;
         border-radius: 10px;
@@ -72,3 +73,83 @@ input:focus {
     outline: 1px solid var(--action);
 }
 
+.birthday-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    font-size: 1.1rem;
+    width: 80%;
+    align-items: center;
+}
+
+.birthday-text {
+    margin-right: 50%;
+    font-size: 1.3rem;
+    
+}
+
+
+.birthday-wrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.birthday-wrapper > select {
+
+    width: 4.5rem;
+    font-size: 1.1rem;
+    background-color: var(--main);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.gender {
+
+width: 80%;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
+
+
+.gender-text {
+    font-size: 1.3rem;
+    margin-right: 50%;
+}
+
+.gender-opts {
+
+    font-size: 1.2rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.gender-opts div {
+
+    display: flex;
+    gap: .2rem;
+    justify-content: center;
+}
+
+.gender-opts div input {
+    align-self: flex-start;
+    margin-top: -.1rem;
+
+}
+
+.gender-opts div input:focus {
+    outline: none;
+}
+
+.submit {
+    font-family: inherit;
+    padding: 2% 2%;
+    background-color: var(--action);
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5%;
+}

@@ -2,7 +2,7 @@ import './CreateAccModal.css';
 
 const BirthdaySection = () => {
   return (
-    <div>
+    <div className="birthday-container">
       <div className="birthday-text">Birthday</div>
       <span className="birthday-wrapper">
         <select name="month" id="birthday-month">

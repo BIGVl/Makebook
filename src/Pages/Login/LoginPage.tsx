@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { useTransition } from 'react-spring';
 
 const LoginPage = () => {
   const [create, setCreate] = useState(false);
@@ -13,6 +14,21 @@ const LoginPage = () => {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+
+  const transition = useTransition(create, {
+    from: {
+      opacity: 0,
+      y: 1000
+    },
+    enter: {
+      opacity: 1,
+      y: 0
+    },
+    leave: {
+      opacity: 0,
+      y: 1000
+    }
+  });
 
   const signIn = async (e: any) => {
     e.preventDefault();
@@ -34,7 +50,9 @@ const LoginPage = () => {
 
   return (
     <div className="login">
-      {create === false ? null : <CreateAccModal create={create} setCreate={setCreate} />}
+      {transition(
+        (styles, item) => item && <CreateAccModal opacity={styles.opacity} style={styles} create={create} setCreate={setCreate} />
+      )}
       <div className="left-login">
         <div id="makebook">Makebook</div>
         <p>Get as productive as possible while having fun with friends and associates.</p>
