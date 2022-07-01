@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { animated } from 'react-spring';
+import Spinner from '../../../Components/Spinner/Spinner';
 
 type props = {
   setCreate: any;
@@ -23,6 +24,7 @@ const CreateAccModal = ({ setCreate, create, style, opacity }: props) => {
     password: '',
     gender: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const onChange = (e: any) => {
@@ -34,7 +36,7 @@ const CreateAccModal = ({ setCreate, create, style, opacity }: props) => {
   //Saving the user's id, gender and name in the firestore as well as sending him to his profile page
   const formSubmit = async (e: any) => {
     e.preventDefault();
-
+    setIsLoading(true);
     try {
       const userCredentials = await createUserWithEmailAndPassword(auth, inputs.email, inputs.password);
       const user = userCredentials.user;
@@ -44,6 +46,7 @@ const CreateAccModal = ({ setCreate, create, style, opacity }: props) => {
         name: `${inputs.fName} ${inputs.lName}`
       });
       navigate(`/profile/${user.uid}`);
+      setIsLoading(true);
       console.log(user);
     } catch (err) {
       console.log(err);
@@ -52,6 +55,7 @@ const CreateAccModal = ({ setCreate, create, style, opacity }: props) => {
 
   return (
     <animated.div style={{ opacity: opacity.to({ range: [1.0, 0.0], output: [1, 0] }) }} className="create-acc">
+      {isLoading && <Spinner />}
       <animated.div style={style} className="create-div">
         <img
           src={close}

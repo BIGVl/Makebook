@@ -5,6 +5,7 @@ import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useTransition } from 'react-spring';
+import Spinner from '../../Components/Spinner/Spinner';
 
 const LoginPage = () => {
   const [create, setCreate] = useState(false);
@@ -13,6 +14,7 @@ const LoginPage = () => {
     password: ''
   });
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const transition = useTransition(create, {
@@ -32,10 +34,12 @@ const LoginPage = () => {
 
   const signIn = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const userCred = await signInWithEmailAndPassword(auth, signInInfo.email, signInInfo.password);
       const user = userCred.user;
       navigate(`/profile/${user.uid}`);
+      setIsLoading(false);
     } catch (err) {
       setErrorMessage('Email or password incorrect!');
     }
@@ -50,6 +54,7 @@ const LoginPage = () => {
 
   return (
     <div className="login">
+      {isLoading && <Spinner />}
       {transition(
         (styles, item) => item && <CreateAccModal opacity={styles.opacity} style={styles} create={create} setCreate={setCreate} />
       )}

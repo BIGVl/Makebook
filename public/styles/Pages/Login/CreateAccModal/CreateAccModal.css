@@ -1,0 +1,142 @@
+.create-acc {
+  position: absolute;
+  background-color: rgba(50, 50, 50, 0.5);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.create-div {
+  background-color: var(--secondary);
+  width: 25vw;
+  height: 30vh;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px 2px hsl(280, 50%, 70%);
+  padding: 1rem;
+  width: 30vw;
+  height: 54vh;
+  margin-top: -10%;
+}
+
+.create-div > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+}
+
+.create-div > form > legend {
+  font-size: 1.7rem;
+  align-self: flex-start;
+  font-family: inherit;
+  color: var(--action);
+  margin-left: 10%;
+  margin-top: -5%;
+  margin-bottom: 5%;
+}
+
+form > .name {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.name > input {
+  width: 70%;
+  height: 2rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+
+input {
+  height: 2rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+
+input:focus {
+  outline: 1px solid var(--action);
+}
+
+.birthday-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  font-size: 1.1rem;
+  width: 80%;
+  align-items: center;
+}
+
+.birthday-text {
+  margin-right: 50%;
+  font-size: 1.3rem;
+}
+
+.birthday-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.birthday-wrapper > select {
+  width: 4.5rem;
+  font-size: 1.1rem;
+  background-color: var(--main);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.gender {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gender-text {
+  font-size: 1.3rem;
+  margin-right: 50%;
+}
+
+.gender-opts {
+  font-size: 1.2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.gender-opts div {
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.gender-opts div input {
+  align-self: flex-start;
+  margin-top: -0.1rem;
+}
+
+.gender-opts div input:focus {
+  outline: none;
+}
+
+.submit {
+  font-family: inherit;
+  padding: 2% 2%;
+  background-color: var(--action);
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5%;
+}
+
+/*# sourceMappingURL=CreateAccModal.css.map */

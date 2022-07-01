@@ -1,8 +1,13 @@
+import './Spinner.scss';
+
 const Spinner = () => {
   return (
     <div className="spinner">
-      <div></div>
-      <div></div>
+      <div className="bubbles-container">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };
