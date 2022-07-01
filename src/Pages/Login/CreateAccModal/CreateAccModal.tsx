@@ -43,7 +43,8 @@ const CreateAccModal = ({ setCreate, create, style, opacity }: props) => {
       await setDoc(doc(db, 'users', user.uid), {
         user: user.uid,
         gender: inputs.gender,
-        name: `${inputs.fName} ${inputs.lName}`
+        fName: inputs.fName,
+        lName: inputs.lName
       });
       navigate(`/profile/${user.uid}`);
       setIsLoading(true);

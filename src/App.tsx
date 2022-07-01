@@ -17,7 +17,6 @@ export const App = () => {
       } else {
         setUser('null');
       }
-      console.log(user);
     });
   }, []);
 
@@ -26,12 +25,12 @@ export const App = () => {
       <Navbar />
       <Router>
         <Routes>
+          <Route path="/" element={user === 'null' ? <Navigate to="/login" /> : <Navigate to={`/profile/${user}`} />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route
             path={`/profile/${user}`}
             element={user !== 'null' ? <Profile user={user} /> : <Navigate to="/login" replace />}
           />
-          <Route path="/" element={user === 'null' ? <Navigate to="/login" /> : <Navigate to={`/profile/${user}`} />} />
-          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Router>
     </div>
